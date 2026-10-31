@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "file:./data/prod.db"
+      PORT: "3000"
+    volumes:
+      - card-data:/app/data
+
+volumes:
+  card-data:
