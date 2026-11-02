@@ -5,7 +5,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors();
   const port = process.env.PORT ? Number(process.env.PORT) : 3000;
-  await app.listen(port);
-  console.log(`GraphQL: http://localhost:${port}/graphql`);
+  await app.listen(port, '0.0.0.0');
+  console.log(`GraphQL: http://0.0.0.0:${port}/graphql`);
 }
 bootstrap();
