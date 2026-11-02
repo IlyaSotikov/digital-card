@@ -51,6 +51,29 @@ docker compose up --build
 
 При старте контейнера выполняются миграции и seed; сервис слушает порт `3000`.
 
+## Деплой (ссылка для HR)
+
+Репозиторий: https://github.com/IlyaSotikov/digital-card
+
+### Render (рекомендуется, ~5 минут)
+
+1. Зарегистрируйтесь на [render.com](https://render.com) (можно через GitHub).
+2. **New → Blueprint** → подключите репозиторий `IlyaSotikov/digital-card` (или **New → Web Service** → Docker).
+3. Если Web Service вручную: Runtime = Docker, Instance = Free.
+4. После деплоя откройте URL вида `https://digital-card-xxxx.onrender.com/graphql` — это Apollo Sandbox.
+
+Либо одной кнопкой (после логина в Render):
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/IlyaSotikov/digital-card)
+
+### Railway
+
+1. [railway.app](https://railway.app) → New Project → Deploy from GitHub → `digital-card`.
+2. Добавьте переменные: `DATABASE_URL=file:./data/prod.db`, `PORT=3000`.
+3. Ссылка будет вида `https://....up.railway.app/graphql`.
+
+При старте контейнер сам создаёт БД и заполняет профиль (seed).
+
 ## Архитектура
 
 | Слой | Ответственность |
